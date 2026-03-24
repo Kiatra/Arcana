@@ -47,8 +47,6 @@ Bar.lua
 DropPoints.lua
 
 Modules\MoreArcana\MoreArcana.lua
-Modules\Lauchers\Lauchers_LibQTip.lua
-
 
 Modules\PlayedTime\PlayedTime_Loc.lua
 Modules\PlayedTime\PlayedTime.lua
