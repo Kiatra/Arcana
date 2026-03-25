@@ -16,12 +16,16 @@ end
 local function convertDeprecatedBarName(name)
     local n = name:match("^ChocolateBar(%d+)$")
     if n then
+        print("|cff88ccffArcana|r Converting bar name: " .. name .. " -> Arcana" .. n)
         return "Arcana" .. n
     end
 end
 
 local function migrateBarNames(db)
+    if not (db and db.barSettings) then return end
+
     local barSettings = db.barSettings
+
     local toRename = {}
     -- collect
     for oldName, settings in pairs(barSettings) do
