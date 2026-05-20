@@ -403,7 +403,9 @@ function ArcanaPiece:New(name, obj, settings, database)
     arcanaPiece.text = arcanaPiece:CreateFontString(nil, nil, "GameFontHighlight")
     ---@diagnostic disable-next-line: missing-parameter
 
-    arcanaPiece.text:SetFont(db.fontPath, db.fontSize, db.fontOutline)
+    if db.fontPath and db.fontPath ~= "" and db.fontPath ~= " " then
+        arcanaPiece.text:SetFont(db.fontPath, db.fontSize, db.fontOutline)
+    end
 
     -- disable default font shadow if outline is enabled
     if db.fontOutline ~= "" then
